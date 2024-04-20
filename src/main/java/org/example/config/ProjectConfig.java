@@ -1,5 +1,6 @@
 package org.example.config;
 
+import org.example.beans.Person;
 import org.example.beans.Vehicle;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -23,36 +24,4 @@ import org.springframework.context.annotation.Primary;
 @ComponentScan("org.example.beans")
 public class ProjectConfig {
 
-    @Primary
-    @Bean(value = "audi")
-    Vehicle vehicle(){
-        var veh = new Vehicle();
-        veh.setName("Audi 8");
-        return veh;
-    }
-
-    @Bean(name="honda")
-    Vehicle vehicle2(){
-        var veh = new Vehicle();
-        veh.setName("Honda");
-        return veh;
-    }
-
-    @Bean("mars")
-    Vehicle vehicle3(){
-        var veh = new Vehicle();
-        veh.setName("Mars");
-        return veh;
-    }
-
-
-    @Bean
-    String hello(){
-        return "Hello world!";
-    }
-
-    @Bean
-    Integer number(){
-        return 16;
-    }
 }
